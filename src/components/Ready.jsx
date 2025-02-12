@@ -25,6 +25,7 @@ const Ready = () => {
     html2canvas(ticketElement, {
       scale: 2,
       useCORS: true,
+      backgroundColor: '#12464E'
     }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
 
