@@ -2,7 +2,6 @@
 import { useAuth } from "../context";
 import SelectInfo from "./SelectInfo";
 import ShowProgress from "./ShowProgress";
-import { GrLocationPin } from "react-icons/gr";
 
 // eslint-disable-next-line react/prop-types
 const TicketSelection = ({ onNext }) => {
@@ -17,7 +16,9 @@ const TicketSelection = ({ onNext }) => {
       <ShowProgress currentPage={currentPage} totalSteps={totalSteps} />
       <div className="bg-[#08252B] w-full mt-8 py-4 px-4 rounded-[16px]">
         <div className="bg-linear-to-l from-[#02191D] from-[30%]  text-white to-[#197686] md:px-0 px-8  py-6 mx-auto text-center border border-[#197686] rounded-[16px]">
-          <h1 className="text-5xl" style={{ fontFamily: "Road Rage" }}>
+          <h1
+            className="text-5xl font-medium"
+            style={{ fontFamily: "Road Rage" }}>
             Techember Fest &quot;25
           </h1>
           <p className="text-[12px] mt-2">
@@ -26,7 +27,7 @@ const TicketSelection = ({ onNext }) => {
           </p>
           <div className="md:flex items-center gap-2 justify-center text-[12px] mt-2">
             <div className="flex items-center justify-center">
-              <GrLocationPin />
+              📍
               <p>[Event Location]</p>
             </div>
             <div className="flex items-center justify-center gap-2">
@@ -67,7 +68,7 @@ const TicketSelection = ({ onNext }) => {
           </div>
         </div>
 
-        <div className="flex flex-col mt-8 text-white ">
+        <div className="flex flex-col mt-8 text-white px-4">
           <label htmlFor="ticket" className="text-[14px]">
             Number of tickets
           </label>
