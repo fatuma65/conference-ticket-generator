@@ -1,65 +1,41 @@
-## Conference Ticket Generator
+# Conference Ticket Generator
 
 This application is built with React that allows users to fill out a form, validate inputs, and generate a downloadable ticket upon successful submission. The project emphasizes pixel-perfect implementation, accessibility, and responsive design.
 
-### Features
+## Features
 
-#### Core Features
-##### Form Elements:
+#### Form Elements:
 - Full Name: Text input for the user's full name.
 - Email Address: Email input field.
 - Avatar Upload: Users can upload their avatar image, which is stored using Cloudinary or any image hosting service. Only image URLs are submitted.
 - Submit Button: Button to submit the form.
 
-##### Form Validation:
-This ensures all required fields are filled in before submission.
+#### Form Validation:
 - Validates email format.
 - Accepts only valid image URLs for avatars.
 - Displays clear error messages near the respective fields if validation fails.
 
-##### State Persistence:
+#### State Persistence:
 - Retains user inputs using local storage or IndexedDB, ensuring data is not lost on page refresh.
 
-##### Accessibility:
+#### Accessibility:
 - All form fields, hints, and error messages are screen-reader accessible.
 - All elements are focusable, with clear hover and focus states.
 - Supports full keyboard navigation.
 
-##### Ticket Generation:
+#### Ticket Generation:
 - Generates and displays a Conference Ticket containing:
 - Full Name
 - Email Address
 - Avatar (displayed as an image from the provided URL)
 - The ticket is only generated if the form passes validation.
 
-##### Responsive Design:
+#### Responsive Design:
 - The form and ticket layout adjust seamlessly across different screen sizes.
 - Optimized for small screens with proper spacing and stacking.
 
-### Acceptance Criteria
 
-1. Form Validation
-- Users must provide all required details before submission.
-- The email must be in a valid format.
-- Avatar uploads must be handled via Cloudinary or any external image URL submission.
-- Display relevant error messages near the respective fields.
-
-2. State Persistence
-The form fields should persist user input using local storage or IndexedDB, ensuring data remains intact even if the page is refreshed.
-
-3. Ticket Generation
-The generated ticket should display the user’s full name, email, and avatar.
-The ticket should only appear when all form validations pass successfully.
-
-4. Accessibility
-- All form elements and error messages must be fully accessible and announced by screen readers.
-- The application must support complete keyboard navigation.
-
-5. Responsive Design
-- The form and generated ticket must be fully responsive and visually optimized for all device sizes.
-- Ensure the ticket is clearly visible immediately after submission on both mobile and desktop screens.
-
-### Technologies Used
+## Technologies Used
 
 - React: Frontend framework for building the user interface.
 - Cloudinary: For handling image uploads and storing avatar URLs.
@@ -74,8 +50,7 @@ The ticket should only appear when all form validations pass successfully.
 1. Clone the Repository:
 
 ```bash
-git clone https://github.com/your-username/conference-ticket-generator.git
-cd conference-ticket-generator
+git clone https://github.com/fatuma65/conference-ticket-generator.git
 ```
 
 2. Install Dependencies:
@@ -103,7 +78,7 @@ npm run dev
 5. Open in Browser:
 Visit http://localhost:3000 to view the application.
 
-### Usage
+## Usage
 
 Fill Out the Form:
 - Enter your Full Name.
@@ -116,7 +91,7 @@ Fill Out the Form:
 The ticket will display your name, email, and avatar.
 You can download the ticket as a PDF.
 
-### Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 1. Fork the repository.

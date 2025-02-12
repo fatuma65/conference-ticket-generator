@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect, useRef, useCallback } from "react";
 import TicketSelection from "../components/TicketSelection";
-import Ready from "../components/Ready";
+import Ready from "../components/ReadyTicket";
 import { UserContext } from "./index";
 import AttendeeForm from "../components/AttendeeForm";
 

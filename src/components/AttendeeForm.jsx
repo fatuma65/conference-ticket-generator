@@ -206,7 +206,7 @@ const AttendeeForm = ({ onNext, onBack }) => {
                 onClick={onBack}
                 tabIndex="0"
                 onKeyDown={(e) => e.key === "Enter" && onBack()}
-                className="border border-[#24A0B5] md:w-[50%] w-full p-3 rounded-md cursor-pointer  focus:ring-2 focus:ring-[#24A0B5] focus:ring-offset-2 focus:ring-offset-[#052228] hover:bg-[#041E23] transition-colors">
+                className="border border-[#24A0B5] md:w-[50%] w-full p-3 rounded-md cursor-pointer focus:ring-2 focus:ring-[#24A0B5] focus:ring-offset-2 focus:ring-offset-[#052228] hover:bg-[#041E23] transition-colors">
                 Back
               </button>
               <button
