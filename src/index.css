@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Road+Rage&display=swap");
 @import "tailwindcss";
 
 @theme {
-    --font-montserrat: "Montserrat", sans-serif; 
-  }
-body {
-  margin: 0;
-  padding: 0;
+  --font-montserrat: "Montserrat", sans-serif;
 }
