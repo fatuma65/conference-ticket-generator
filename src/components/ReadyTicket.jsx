@@ -25,7 +25,7 @@ const Ready = () => {
     html2canvas(ticketElement, {
       scale: 2,
       useCORS: true,
-      backgroundColor: '#12464E'
+      backgroundColor: "#12464E",
     }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
 
@@ -137,7 +137,7 @@ const Ready = () => {
           onClick={() => resetForm()}
           tabIndex="0"
           onKeyDown={(e) => e.key === "Enter" && resetForm()}
-          className="bg-[#041E23] border border-[#197686] md:w-[50%] w-full cursor-pointer h-full rounded-md p-1.5  p-3 text-[#24A0B5] ">
+          className="bg-[#041E23] border border-[#197686] md:w-[50%] w-full cursor-pointer h-full rounded-md p-1.5  p-3 text-[#24A0B5] focus:ring-2 focus:ring-[#24A0B5] focus:ring-offset-2 focus:ring-offset-[#052228] hover:bg-[#041E23] transition-colors">
           Book Another Ticket
         </button>
         <button
