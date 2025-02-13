@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import TicketSelection from "../components/TicketSelection";
 import Ready from "../components/ReadyTicket";
-import { UserContext } from "./index";
+import { UserContext } from "./customHooks";
 import AttendeeForm from "../components/AttendeeForm";
 
 const AuthProvider = ({ children }) => {
@@ -120,17 +120,6 @@ const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const resetForm = () => {
-    setFormData({
-      name: "",
-      email: "",
-      project: "",
-      avatar: null,
-    });
-    setUser(null);
-    localStorage.removeItem("userDetails");
-    setCurrentPage(0);
-  };
   // Navigate to the next page
   const handleNext = useCallback(() => {
     if (currentPage < totalSteps - 1) {
@@ -160,7 +149,8 @@ const AuthProvider = ({ children }) => {
     validateForm,
     setErrors,
     fileInputRef,
-    resetForm,
+    setCurrentPage,
+    setFormData,
     totalSteps,
   };
 

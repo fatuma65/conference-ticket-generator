@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import SelectInfo from "./SelectInfo";
 import ShowProgress from "./ShowProgress";
-import { useAuth } from "../context/index";
+import { useAuth } from "../context/customHooks";
 import UserForm from "./UserForm";
 
 const AttendeeForm = ({ onNext, onBack }) => {

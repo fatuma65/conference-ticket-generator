@@ -1,6 +1,13 @@
+html,
 body {
-    background-color: #02191D;
-    min-height: 100vh;
-    font-family: "Montserrat", serif;
-    
+  background-color: #02191d;
+  font-family: "Montserrat", serif;
+  overflow-x: hidden;
+}
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 2%;
 }
