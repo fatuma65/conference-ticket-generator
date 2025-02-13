@@ -1,5 +1,5 @@
 import ProgressBar from './ProgressBar'
-import { useAuth } from '../context'
+import { useAuth } from '../context/customHooks'
 
 const ShowProgress = () => {
   const {totalSteps, currentPage} = useAuth()

@@ -1,11 +1,17 @@
-// import React from "react";
-import { useAuth } from "../context";
+import { useAuth, useTicket } from "../context/customHooks";
 import SelectInfo from "./SelectInfo";
 import ShowProgress from "./ShowProgress";
+import { ticketTypes, numberOfTickets } from "../constants/tickets";
 
 // eslint-disable-next-line react/prop-types
 const TicketSelection = ({ onNext }) => {
   const { currentPage, totalSteps } = useAuth();
+  const {
+    ticketCount,
+    handleCountChange,
+    selectedTicket,
+    handleTicketSelection,
+  } = useTicket();
   return (
     <>
       <SelectInfo
@@ -39,52 +45,49 @@ const TicketSelection = ({ onNext }) => {
 
         <hr className="w-[100%] border-2 border-[#07373F] mt-8" />
 
-        <div className=" mt-8 text-white">
+        <div className=" mt-6 text-white">
           <p className="md:text-[14px] text-[16px]">Select Ticket Type:</p>
 
           <div className="bg-[#052228] border border-[#197686] grid md:grid-cols-3 grid-cols-1 gap-2 mt-2 py-4 px-4 rounded-[24px]">
-            <div className="bg-[#12464E] border-2 border-[#197686] flex flex-col py-4 px-3 rounded-[8px]">
-              <h4 className="font-semibold">Free</h4>
-              <h6 className="md:text-[12px] text-[14px] font-medium mt-3 md:text-nowrap">
-                REGULAR ACCESS
-              </h6>
-              <p className="text-[12px]">20 left!</p>
-            </div>
-
-            <div className="border-2 border-[#197686] flex flex-col  py-4 px-3 rounded-[8px]">
-              <h4 className="font-semibold">$50</h4>
-              <h6 className="md:text-[12px] text-[14px] font-medium mt-3 md:text-nowrap">
-                VIP ACCESS
-              </h6>
-              <p className="text-[12px]">20 left!</p>
-            </div>
-            <div className="border-2 border-[#197686] flex flex-col py-4 px-3 rounded-[8px]">
-              <h4 className="font-semibold">$150</h4>
-              <h6 className="md:text-[12px] text-[14px] font-medium mt-3 md:text-nowrap">
-                VVIP ACCESS
-              </h6>
-              <p className="text-[12px]">20 left!</p>
-            </div>
+            {ticketTypes.map((type) => (
+              <div
+                key={type}
+                onClick={() => handleTicketSelection(type)}
+                className={`${
+                  selectedTicket === type ? "bg-[#12464E]" : ""
+                } hover:bg-[#2C545B] border-2 border-[#197686] flex flex-col py-4 px-3 rounded-[8px] cursor-pointer`}>
+                <h4 className="font-semibold">
+                  {type.includes("$") ? type.split(" ")[0] : type}
+                </h4>
+                <h6 className="md:text-[12px] text-[14px] regular mt-3 md:text-nowrap">
+                  {type.includes("VIP") ? type.split(" ")[1] : "REGULAR"} ACCESS
+                </h6>
+                <p className="text-[12px]">20 left!</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="flex flex-col mt-8 text-white px-4">
-          <label htmlFor="ticket" className="text-[14px]">
+        <div className="flex flex-col mt-6 text-white">
+          <label htmlFor="tickets" className="text-[14px]">
             Number of tickets
           </label>
-          <select
-            name="ticket"
-            id="ticket"
-            className=" mt-2 bg-[#07373F] text-[13px] border border-[#07373F] outline-none md:px-2 p-3 rounded-[16px]">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <div className=" border border-[#07373F] bg-none rounded-[12px] p-3 mt-3 w-full">
+            <select
+              name="ticket"
+              id="ticket"
+              value={ticketCount}
+              onChange={handleCountChange}
+              className="  text-[13px] outline-none w-full h-full bg-[#08252B] cursor-pointer text-white">
+              {numberOfTickets.map((num) => (
+                <option key={num} value={num}>
+                  {num}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-
-        <div className=" text-white md:flex md:flex-row flex-col mt-8 text-[12px] gap-2 rounded-[16px]">
+        <div className=" text-white md:flex md:flex-row flex-col mt-6 text-[12px] gap-2 rounded-[16px]">
           <button className="bg-[#041E23] border border-[#197686] md:w-[50%] w-full cursor-pointer h-full rounded-md  p-3 text-[#24A0B5]">
             Cancel
           </button>

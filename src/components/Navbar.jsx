@@ -1,5 +1,5 @@
 import { GrLinkNext } from "react-icons/gr";
-import { useAuth } from "../context";
+import { useAuth } from "../context/customHooks";
 import icon from "../assets/hugeicons_ticket-01.png";
 const Navbar = () => {
   const { components, currentPage } = useAuth();

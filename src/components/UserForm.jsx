@@ -26,9 +26,7 @@ const UserForm = ({
 
           <div className="bg-[#02191D] mt-4">
             <div
-              className={` ${
-                formData.avatar ? "h-28" : ""
-              } bg-[#0E464F] w-full md:w-[45%] rounded-[24px] h-[150px] cursor-pointer px-8 lg:py-8 py-12 mx-auto flex flex-col items-center relative`}
+              className={`bg-[#0E464F] w-full md:w-[45%] rounded-[24px] h-[150px] cursor-pointer px-8 lg:py-8 py-12 mx-auto flex flex-col items-center justify-center relative`}
               aria-label="Upload profile photo"
               tabIndex="0"
               onKeyDown={(e) =>
@@ -41,14 +39,13 @@ const UserForm = ({
                 accept="image/jpeg, image/png"
                 name="avatar"
                 onChange={handleAvatarChange}
-                className={`${
-                  formData.avatar ? "hidden" : "block"
-                } absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10`}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                 disabled={isUploading}
                 aria-label="Choose profile photo"
                 aria-required="true"
                 aria-invalid={!!errors.avatar}
               />
+
               {formData.avatar ? (
                 <img
                   src={formData.avatar}
@@ -56,31 +53,27 @@ const UserForm = ({
                   className="absolute inset-0 w-full h-full object-cover rounded-[12px]"
                 />
               ) : (
-                <>
-                  <MdOutlineCloudUpload
-                    className="text-2xl"
-                    aria-hidden="true"
-                  />
+                <div className="flex flex-col items-center justify-center">
+                  <MdOutlineCloudUpload className="text-2xl text-white" />
                   <p className="text-[12px] text-center mt-4">
                     {isUploading
                       ? "Uploading..."
                       : "Drag & drop or click to upload"}
                   </p>
-                </>
+                </div>
               )}
             </div>
-
-            {errors.avatar && (
-              <p
-                id="upload-error"
-                className="text-red-500 text-[12px] text-left mt-2"
-                role="alert">
-                {errors.avatar}
-              </p>
-            )}
           </div>
-        </div>
 
+          {errors.avatar && (
+            <p
+              id="upload-error"
+              className="text-red-500 text-[12px] text-left mt-2"
+              role="alert">
+              {errors.avatar}
+            </p>
+          )}
+        </div>
         <hr
           className="w-[100%] border-2 border-[#07373F] mt-8"
           role="separator"

@@ -4,10 +4,19 @@ import ShowProgress from "./ShowProgress";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 import Ticket from "./Ticket";
-import { useAuth } from "../context";
+import { useAuth, useTicket } from "../context/customHooks";
 
 const Ready = () => {
-  const { user, resetForm, currentPage, totalSteps } = useAuth();
+  const {
+    user,
+    setUser,
+    setFormData,
+    setCurrentPage,
+    currentPage,
+    totalSteps,
+  } = useAuth();
+
+  const { setSelectedTicket, setTicketCount } = useTicket();
 
   const downloadTicket = () => {
     // Get the ticket element by its ID
@@ -37,6 +46,21 @@ const Ready = () => {
       // Save the PDF
       pdf.save("ticket.pdf");
     });
+  };
+
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      email: "",
+      project: "",
+      avatar: null,
+    });
+    setUser(null);
+    setSelectedTicket(null);
+    setTicketCount(1);
+    localStorage.removeItem("userDetails");
+    localStorage.removeItem("selectedTicket");
+    setCurrentPage(0);
   };
   return (
     <>
