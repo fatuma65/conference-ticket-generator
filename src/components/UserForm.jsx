@@ -74,6 +74,7 @@ const UserForm = ({
             </p>
           )}
         </div>
+
         <hr
           className="w-[100%] border-2 border-[#07373F] mt-8"
           role="separator"

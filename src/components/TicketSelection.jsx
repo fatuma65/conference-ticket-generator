@@ -17,10 +17,9 @@ const TicketSelection = ({ onNext }) => {
       <SelectInfo
         title={"Ticket Selection"}
         steps={`${currentPage + 1}/${totalSteps}`}
-        otherStyles={"md:flex-row flex-col"}
       />
       <ShowProgress currentPage={currentPage} totalSteps={totalSteps} />
-      <div className="bg-[#08252B] w-full mt-8 py-4 px-4 rounded-[16px]">
+      <div className="bg-[#08252B] w-full mt-8 py-2 px-2 rounded-[16px]">
         <div className="bg-linear-to-l from-[#02191D] from-[30%]  text-white to-[#197686] md:px-0 px-8  py-6 mx-auto text-center border border-[#197686] rounded-[16px]">
           <h1
             className="text-5xl font-medium"

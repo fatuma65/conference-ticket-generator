@@ -20,18 +20,18 @@ const TicketProvider = ({ children }) => {
     setSelectedTicket(type);
 
     const ticketDetails = { type, count: ticketCount };
+    console.log(ticketDetails);
     localStorage.setItem("selectedTicket", JSON.stringify(ticketDetails));
+    setTicket(ticketDetails);
   };
 
   const handleCountChange = (e) => {
     const count = parseInt(e.target.value);
     setTicketCount(count);
-    setSelectedTicket(count);
 
     if (selectedTicket) {
       const ticketDetails = { type: selectedTicket, count };
       localStorage.setItem("selectedTicket", JSON.stringify(ticketDetails));
-      setSelectedTicket(ticketDetails);
     }
   };
 
